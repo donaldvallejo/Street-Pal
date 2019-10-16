@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href='/'>Back to Home Page</a>
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <h1>{{car.title}}</h1>
+        {% if car.created_at %}
+        <p class='text-muted'>Created on {{ car.created_at.strftime('%A, %d %B, %Y') }}
+            at {{ car.created_at.strftime('%I:%M %p') }}</p>
+        {% endif %}
+        <h2>{{ car.description }}</h2>
+        {% for video in car.videos %}
+            <div class="card"><div class="card-body">
+                <iframe width="420" height="315" src="{{ video }}"></iframe>
+            </div></div>
+        {% endfor %}
+        <p><a href='/cars/{{ car._id }}/edit'>Edit</a></p>
+        <p><form method='POST' action='/cars/{{car._id}}/delete'>
+            <input type='hidden' name='_method' value='DELETE'>
+            <button class='btn btn-primary' type='submit'>Delete</button>
+        </form></p>
+
+        <hr>
+
+    <!-- Comment form -->
+    {% include 'partials/comment_form.html' %}
+
+    <hr>
+
+    <!-- Show Comments -->
+    {% for comment in comments %}
+        {% include 'partials/comment.html' %}
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

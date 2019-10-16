@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Cars For Days</h1>
+<div class='row'>
+    {% for car in cars %}
+    <div class='col-md-3'>
+        <img src="{{ car.Image }}" style="width: 100% !important;" alt="">
+        <div class="container">
+    <div class="row centered">
+        <h2 class="col-sm-3"><a href='/cars/purchase{{ car._id }}'><button class="btn btn-success">Purchase{{ purchase }}</button></a></h2>
+        <h2 class="col-sm-3"><a href='/cars/{{ car._id }}'><button class="btn btn-primary">Comment{{ comment }}</button></a></h2>
+        <h2 class="col-sm-3"><a href='/cars/{{ car._id }}/edit'><button class="btn btn-warning">Edit{{ edit }}</button></a></h2>
+        <h2 class="col-sm-3"><form method="POST" action="/cars/{{ car._id }}/delete"><button type="submit" class="btn btn-danger">Delete{{ delete }}</button></form></h2>
+
+    </div>
+        </div>
+            <div class="row offset-md-1 centered">
+                <div class=""></div>
+                <p class="col-sm-2">{{ car.Make }}</p>
+                <p class="col-sm-2">{{ car.Model }}</p>
+                <p class="col-sm-2">{{ car.Color }}</p>
+                <p class="col-sm-2">{{ car.Price }}</p>
+            </div>
+            <div class="row offset-md-1">            
+                <p class="col-sm-12">{{ car.Description }}</p>
+            </div>
+    </div>
+    {% endfor %}
+</div>  
+{% endblock %} 
+
