@@ -8,7 +8,8 @@ body {
 }
 
 .container {
-    padding-left: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 p {
@@ -145,9 +146,6 @@ a.article, a.article:hover {
     color: #fff !important;
 }
 
-.page-footer {
-    position: fixed !important;
-}
 
 /* ---------------------------------------------------
     CONTENT STYLE
