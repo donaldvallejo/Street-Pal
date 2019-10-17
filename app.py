@@ -1,26 +1,17 @@
 # https://streetpal.herokuapp.com/ | https://git.heroku.com/streetpal.git
-# Maps API KEY : AIzaSyChhJt9bRZvlbMol6VvdQNKwR1BrvV9kx8
 # sudo lsof -iTCP -sTCP:LISTEN -n -P
 import os
+from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
-from flask_googlemaps import GoogleMaps
-from datetime import datetime
-
-app = Flask(__name__)
-
-app.config['GOOGLEMAPS_KEY'] = "8JZ7i18MjFuM35dJHq70n3Hx4"
-# Initialize the extension
-GoogleMaps(app)
-# GoogleMaps(app, key="8JZ7i18MjFuM35dJHq70n3Hx4")
-
 host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/cars')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 cars = db.cars
 comments = db.comments
 
+app = Flask(__name__)
 
 @app.route('/')
 def cars_index():
