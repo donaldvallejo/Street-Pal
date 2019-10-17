@@ -10,6 +10,7 @@ body {
 .container {
     padding: 0 !important;
     margin: 0 !important;
+    width: 100%;
 }
 
 p {
@@ -49,6 +50,10 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
+.card {
+    min-width: 100%;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -75,7 +80,6 @@ a, a:hover, a:focus {
 #sidebar.active {
     margin-left: -250px;
     transform: rotateY(100deg);
-    width: 96vw !important;
 }
 
 #sidebar .sidebar-header {
