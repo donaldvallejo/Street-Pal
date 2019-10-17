@@ -28,6 +28,7 @@ a, a:hover, a:focus {
 
 .navbar {
     padding: 15px 10px;
+    width: 77vw !important;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -63,7 +64,8 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 300px;
-    left: 0 !important;    
+    left: 0 !important;   
+    width: 77vw; 
     background: #7386D5;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
@@ -73,6 +75,7 @@ a, a:hover, a:focus {
 #sidebar.active {
     margin-left: -250px;
     transform: rotateY(100deg);
+    width: 96vw !important;
 }
 
 #sidebar .sidebar-header {
@@ -146,7 +149,15 @@ a.article, a.article:hover {
     color: #fff !important;
 }
 
-
+.card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  }
+  
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
