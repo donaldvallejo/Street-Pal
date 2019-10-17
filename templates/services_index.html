@@ -90,12 +90,6 @@
                                 <a href='/services/new' class='btn btn-default navbar-btn'>Create</a>
                             </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Update</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Delete</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -105,12 +99,18 @@
                     <div class="row no-gutters">
                       <div class="col-md-4">
                         {{googlemap("my_awesome_map", lat=0.23234234, lng=-0.234234234, markers=[(0.12, -0.45345)])}}
+                        <div class="container">
+                            <div class="row">
+                        <h2 class="col-md-4"><a href=''><button class="btn btn-primary">Comment{{ comment }}</button></a></h2>
+                        <h2 class="col-md-2"><a href=''><button class="btn btn-warning">Edit{{ edit }}</button></a></h2>
+                        <h2 class="col-md-3"><form method="POST" action=""><button type="submit" class="btn btn-danger">Delete{{ delete }}</button></form></h2>
+                    </div>
+                    </div>
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-  
                         </div>
                       </div>
                     </div>
