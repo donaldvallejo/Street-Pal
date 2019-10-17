@@ -3,12 +3,12 @@
 {% block content %}
 <div class='row'>
     <div class='col-sm-6 col-sm-offset-3'>
-        <form method='POST' action='/cars/{{car._id}}'>
+        <form method='POST' action='/services/{{service._id}}'>
             <input type='hidden' name='_method' value='PUT'/>
-            {% include 'partials/cars_form.html' %}
+            {% include 'partials/services_form.html' %}
             <!-- BUTTON -->
             <div class='form-group'>
-                <button class='btn btn-primary' type='submit'>Save Car</button>
+                <button class='btn btn-primary' type='submit'>Save service</button>
             </div>
         </form>
     </div>
